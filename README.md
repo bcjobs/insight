@@ -130,3 +130,30 @@ If you run into `roslyn\csc.exe` exception, try this in Package Manager Console:
 Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r
 ```
 Source: https://stackoverflow.com/a/34391473/188740
+
+## Other uses
+From README.TXT found in production
+```
+*.pm files format example:
+
+"Label","Pattern"
+"Administrator","'admin' | administrator"
+"Software Developer","(software developer | programmer) & !{Administrator}"
+
+*.cl is a zip file generated with train.exe utility - see train.zip content.
+
+   train.exe <folder path>
+
+Folder should contain text files with the same amount of text lines:
+
+   text.txt - text to train on, an instance per line.
+   *.txt - assigned category files, an assignment per line
+
+*.svm file name in *.cl zip acrhive is changable to apply filters:
+
+  isSpam [1].svm  -> means top 1 label
+  isSpam [5].svm  -> means top 5 label
+  isSpam [90%].svm  -> means allowing labels with probability >= 90%
+  isSpam [90%][5].svm  -> means allowing labels with probability >= 90%
+  isSpam [90%][5].svm  -> takes 5 labels with probablity >= 90%
+```
